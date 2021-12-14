@@ -1,3 +1,51 @@
+function createMaterial(props, material) {
+  // console.log(material)
+
+  const mat = new MeshPhysicalMaterial({
+    name: props.name ? props.name : "PhysicalMaterial",
+    alphaMap: material.alphaMap ? material.alphaMap : null,
+    attenuationTint: props.attenuationTint ? props.attenuationTint : "#ffffff",
+    attenuationDistance: props.attenuationDistance
+      ? props.attenuationDistance
+      : 1,
+    aoMap: material.aoMap ? material.aoMap : null,
+    aoMapIntensity: props.aoMapIntensity
+      ? props.aoMapIntensity
+      : material.aoMapIntensity,
+    blending: props.blending ? props.blending : material.blending,
+    color: props.color ? props.color : material.color,
+    clearcoat: props.clearcoat ? props.clearcoat : 0,
+    clearcoatRoughness: props.clearcoatRoughness ? props.clearcoatRoughness : 0,
+    envMapIntensity: props.envMapIntensity ? props.envMapIntensity : 1,
+    emissive: props.emissive ? props.emissive : "#000000",
+    // emissiveMap: material.emissiveMap ? material.emissiveMap : null,
+    emissiveIntensity: props.emissiveIntensity ? props.emissiveIntensity : 0,
+    ior: props.ior ? props.ior : 1,
+    thickness: props.thickness ? props.thickness : 0.001,
+    thicknessMap: props.thicknessMap ? props.thicknessMap : null,
+    map: material.map ? material.map : null,
+    metalness: props.metalness ? props.metalness : material.metalness,
+    metalnessMap: material.metalnessMap ? material.metalnessMap : null,
+    normalMap: material.normalMap ? material.normalMap : null,
+    normalScale: material.normalScale ? material.normalScale : null,
+    opacity: props.opacity ? props.opacity : 1,
+    // premultipliedAlpha: false,
+    // refractionRatio: props.refractionRatio ? props.refractionRatio : material.refractionRatio,
+    roughness: props.roughness ? props.roughness : material.roughness,
+    roughnessMap: material.roughnessMap ? material.roughnessMap : null,
+    // reflectivity: props.reflectivity ? props.reflectivity : null,
+    side: props.side ? props.side : material.side,
+    // specularIntensity: props.specularIntensity ? props.specularIntensity : 0.5,
+    transmission: props.transmission ? props.transmission : 0,
+    // transmissionMap: material.transmissionMap ? material.transmissionMap : null,
+    transparent: props.transparent
+  });
+
+  material.dispose();
+
+  return mat;
+}
+
 const lensProps = useControls(
   "lensProps",
   {
