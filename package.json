@@ -1,0 +1,35 @@
+{
+  "name": "glasses",
+  "version": "1.0.0",
+  "description": "Transparent glass shader with distortion and fresnel.",
+  "keywords": [],
+  "main": "src/App.js",
+  "dependencies": {
+    "@react-three/drei": "7.3.1",
+    "@react-three/fiber": "7.0.6",
+    "@types/three": "0.130.1",
+    "css-loader": "6.5.1",
+    "cssnano": "5.0.12",
+    "html2canvas": "1.3.3",
+    "interactjs": "1.10.11",
+    "leva": "0.9.13",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-scripts": "4.0.3",
+    "sass-loader": "12.3.0",
+    "three": "0.131.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

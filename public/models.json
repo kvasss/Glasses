@@ -1,0 +1,92 @@
+{
+  "brands": [
+    {
+      "name": "CA"
+    },
+    {
+      "name": "RX"
+    }
+  ],
+  "models": [
+    {
+      "brand": "CA",
+      "folderName": "0BV2228B__2023",
+      "id": "1",
+      "image": "preview.jpg",
+      "model": "0BV2228B__2023",
+      "price": 10100,
+      "title": "0BV2228B__2023",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0BV3044__5484",
+      "id": "2",
+      "image": "preview.jpg",
+      "model": "0BV3044__5484",
+      "price": 10100,
+      "title": "0BV3044__5484",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0ST3065__0002",
+      "id": "3",
+      "image": "preview.jpg",
+      "model": "0ST3065__0002",
+      "price": 10100,
+      "title": "0ST3065__0002",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0TF1139__6001",
+      "id": "4",
+      "image": "preview.jpg",
+      "model": "0TF1139__6001",
+      "price": 10100,
+      "title": "0TF1139__6001",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0TF2208B__8134",
+      "id": "5",
+      "image": "preview.jpg",
+      "model": "0TF2208B__8134",
+      "price": 10100,
+      "title": "0TF2208B__8134",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0TF2209__8328",
+      "id": "6",
+      "image": "preview.jpg",
+      "model": "0TF2209__8328",
+      "price": 10100,
+      "title": "0TF2209__8328",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0TF2214B__8134",
+      "id": "7",
+      "image": "preview.jpg",
+      "model": "0TF2214B__8134",
+      "price": 10100,
+      "title": "0TF2214B__8134",
+      "url": "#"
+    },
+    {
+      "brand": "CA",
+      "folderName": "0TF2216__8333",
+      "id": "8",
+      "image": "preview.jpg",
+      "model": "0TF2216__8333",
+      "price": 10100,
+      "title": "0TF2216__8333",
+      "url": "#"
+    }
+  ]
+}

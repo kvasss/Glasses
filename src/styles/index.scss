@@ -1,0 +1,82 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: flex;
+}
+
+
+.dg.ac {
+    z-index: 10000 !important;
+}
+
+canvas {
+    display: block
+}
+
+button {
+    cursor: pointer;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important
+}
+
+button:focus {
+    outline: none
+}
+
+.modal-3d {
+	width: 640px;
+	height: 500px;
+	margin: auto;
+	position: relative;
+}
+
+.VTO {
+	display: flex;
+}
+
+#ChangeModelWrapper {
+	width: 140px;
+	float: left;
+}
+.change-model {
+	width: 120px;
+	margin-bottom: 10px;
+	border: none;
+	padding: 5px 0;
+}
+
+.products-cards-wrapper {
+	z-index: 50;
+	width: 120px;
+	height: 100%;
+	max-height: 480px;
+}
+
+.products-cards-container {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 120px;
+}
+
+.interface-wrapper {
+	position: absolute;
+	display: block;
+	bottom: 10px;
+	right: 10px;
+	z-index: 500;
+}
+
+.products-cards-wrapper {
+	z-index: 50;
+	width: 140px;
+	height: 100%;
+	max-height: 480px;
+	overflow-x: hidden;
+}
