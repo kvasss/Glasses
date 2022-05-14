@@ -11,10 +11,10 @@
     "metalness": 0,
     "roughness": 0,
     "clearcoat": 1,
-    "clearcoatRoughness": 0.01,
-    "reflectivity": 1,
-    "transmission": 0.99,
+    "clearcoatRoughness": 0,
+    "reflectivity": 0.5,
+    "transmission": 0,
     "opacity": 1,
-    "color": "#fafafa"
+    "color": "#ffffff"
   }
 }

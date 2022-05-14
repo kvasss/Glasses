@@ -1,0 +1,10 @@
+{
+  "envPreset": "city",
+  "params": {
+    "rotationX": 0,
+    "offsetY": 0,
+    "offsetZ": 0,
+    "templesY": 0,
+    "scale": 0.6
+  }
+}

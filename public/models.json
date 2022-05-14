@@ -4,22 +4,41 @@
       "name": "CA"
     },
     {
-      "name": "RX"
+      "name": "PO"
+    },
+    {
+      "name": "BV"
+    },
+    {
+      "name": "ST"
+    },
+    {
+      "name": "TF"
     }
   ],
   "models": [
     {
-      "brand": "CA",
+      "brand": "BV",
       "folderName": "0BV2228B__2023",
       "id": "1",
       "image": "preview.jpg",
       "model": "0BV2228B__2023",
-      "price": 10100,
+      "price": 40500,
       "title": "0BV2228B__2023",
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "PO",
+      "folderName": "0PO0649__24_51",
+      "id": "100",
+      "image": "preview.jpg",
+      "model": "0PO0649__24_51",
+      "price": 65200,
+      "title": "0PO0649__24_51",
+      "url": "#"
+    },
+    {
+      "brand": "BV",
       "folderName": "0BV3044__5484",
       "id": "2",
       "image": "preview.jpg",
@@ -29,7 +48,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "ST",
       "folderName": "0ST3065__0002",
       "id": "3",
       "image": "preview.jpg",
@@ -39,7 +58,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "TF",
       "folderName": "0TF1139__6001",
       "id": "4",
       "image": "preview.jpg",
@@ -49,7 +68,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "TF",
       "folderName": "0TF2208B__8134",
       "id": "5",
       "image": "preview.jpg",
@@ -59,7 +78,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "TF",
       "folderName": "0TF2209__8328",
       "id": "6",
       "image": "preview.jpg",
@@ -69,7 +88,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "TF",
       "folderName": "0TF2214B__8134",
       "id": "7",
       "image": "preview.jpg",
@@ -79,7 +98,7 @@
       "url": "#"
     },
     {
-      "brand": "CA",
+      "brand": "TF",
       "folderName": "0TF2216__8333",
       "id": "8",
       "image": "preview.jpg",
