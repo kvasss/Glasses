@@ -1,11 +1,12 @@
 const scrollCatalogTo = (el) => {
   const modelsContainer = document.querySelector(".products-cards-wrapper");
-  const node = document.querySelector(".change-model.active");
   const modelWrapper = document.querySelector(".change-model-wrapper");
+  const node = el
+    ? el.target.parentNode
+    : document.querySelector(".change-model.active");
 
-  console.log(node);
-  console.log(node.offsetHeight);
-  console.log(modelWrapper.offsetHeight);
+  // console.log(node.offsetHeight);
+  // console.log(modelWrapper.offsetHeight);
 
   if (window.innerWidth < 767) {
     const offset =

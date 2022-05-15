@@ -26,10 +26,14 @@ button:focus {
 
 .modal-3d {
 	width: 640px;
-	// height: 640px;
+	height: 620px;
 	margin: auto;
 	position: relative;
 	background-color: white;
+}
+#root {
+	height: 100%;
+	width: 100%;
 }
 
 .change-model-wrapper {
@@ -60,12 +64,14 @@ button:focus {
 }
 .filter-wrapper .filter-model-container .count {
 	position: absolute;
-	right: 10px;
-	background-color: gray;
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
+	right: 7px;
+	background-color: #dadada;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
 	text-align: center;
+	z-index: 50;
+	border-radius: 50%;
 }
 .filter-wrapper select {
 	width: calc(100% - 20px);
@@ -138,7 +144,7 @@ button:focus {
 // products-cards-wrapper
 .products-cards-wrapper {
 	height: 100%;
-	max-height: 520px;
+	max-height: 565px;
 	direction: rtl;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -174,11 +180,68 @@ button:focus {
 	justify-content: space-between;
 	padding: 20px;
 }
-.product-info-left,
-.product-info-right {
+.product-info-wrapper .product-info-left, 
+.product-info-wrapper .product-info-right {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
+}
+.product-info-wrapper .product-title {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+.product-info-wrapper  .to-page {
+	text-align: center;
+	padding: 5px;
+}
+.product-info-wrapper .add-to-cart {
+	background: #000;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 11px;
+	font-weight: 500;
+	height: 50px;
+	letter-spacing: 1.4px;
+	line-height: 50px;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 180px
+}
+
+.product-info-wrapper .add-to-cart:before {
+	background: #fff;
+	content: "";
+	display: block;
+	height: 48px;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	-webkit-transition: width .4s ease-in-out;
+	transition: width .4s ease-in-out;
+	width: 0;
+	z-index: 1
+}
+
+.product-info-wrapper .add-to-cart:hover:before {
+	left: 1px;
+	right: auto;
+	width: calc(100% - 2px)
+}
+
+.product-info-wrapper .add-to-cart:hover {
+	background: #000;
+	color: #000
+}
+
+.product-info-wrapper .add-to-cart span {
+	position: relative;
+	z-index: 2
 }
 
 // interface-wrapper
@@ -270,5 +333,6 @@ i.flaticons-options {
 .viewer-wrapper {
 	position: relative;
 	display: flex;
+	height: 100%;
 	// overflow: hidden;
 }

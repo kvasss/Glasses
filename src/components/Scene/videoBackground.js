@@ -1,5 +1,5 @@
 // three
-import { sRGBEncoding, VideoTexture, Object3D, Group } from "three";
+import { sRGBEncoding, VideoTexture } from "three";
 
 const videoBackground = (spec) => {
   const videoTexture = new VideoTexture(spec.videoElement);

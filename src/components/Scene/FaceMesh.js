@@ -11,7 +11,7 @@ function FaceMesh() {
   useEffect(() => {
     scene.traverse((node, i) => {
       if (node.isMesh) {
-        // node.material = occluderMaterial();
+        node.material = occluderMaterial();
         node.material.roughness = 0.5;
         node.material.side = 2;
         node.renderOrder = -1;

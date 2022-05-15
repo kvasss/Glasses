@@ -10,26 +10,26 @@ const defaultParams = {
 };
 
 const LoadSettings = async (set, get) => {
-  // const basePathToModel = useStore((state) => state.basePathToModel);
-  // const currentModel = useStore((state) => state.currentModel);
-  // const pathToModel = basePathToModel + "/" + currentModel + "/";
-  // fetch(pathToModel + "config.json")
-  //   .then((response) => response.json())
-  //   .then((json) => {
-  //     set({
-  //       envPreset: json.envPreset ? json.envPreset : "city",
-  //       params: json.params ? json.params : defaultParams,
-  //       lensesSettings: json.lensesSettings ? json.lensesSettings : {},
-  //       refractiveSettings: json.refractiveSettings
-  //         ? json.refractiveSettings
-  //         : {},
-  //       opaqueSettings: json.opaqueSettings ? json.opaqueSettings : {}
-  //     });
-  //     console.log(json);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+  const basePathToModel = useStore((state) => state.basePathToModel);
+  const currentModel = useStore((state) => state.currentModel);
+  const pathToModel = basePathToModel + "/" + currentModel + "/";
+  fetch(pathToModel + "config.json")
+    .then((response) => response.json())
+    .then((json) => {
+      set({
+        envPreset: json.envPreset ? json.envPreset : "city",
+        params: json.params ? json.params : defaultParams,
+        lensesSettings: json.lensesSettings ? json.lensesSettings : {},
+        refractiveSettings: json.refractiveSettings
+          ? json.refractiveSettings
+          : {},
+        opaqueSettings: json.opaqueSettings ? json.opaqueSettings : {}
+      });
+      console.log(json);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 const modelStore = create((set, get) => {
@@ -45,6 +45,7 @@ const modelStore = create((set, get) => {
     lensesSettings: {},
     refractiveSettings: {},
     opaqueSettings: {},
+    meshes: {},
     loadSettings: async () => {
       await LoadSettings(set, get);
     },

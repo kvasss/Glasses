@@ -10,6 +10,7 @@ function GlassesMesh(props) {
   const { scene, materials } = useGLTF(pathToModel + "model.glb");
 
   useEffect(() => {
+    console.log(ref.current);
     for (let [key, material] of Object.entries(materials)) {
       if (key.indexOf("LENS") !== -1) {
       } else if (key.indexOf("REFRACTIVE") !== -1) {

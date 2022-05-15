@@ -18,7 +18,7 @@ function saveScreenshot() {
     }
   };
 
-  html2canvas(document.getElementById("faceFilterCanvas"), {
+  html2canvas(document.getElementById("canvas_wrapper"), {
     scrollY: offsetY
   }).then((canvas) => {
     saveAs(canvas.toDataURL(), fileName);

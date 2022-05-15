@@ -1,18 +1,7 @@
-import React, { Component } from 'react';
+import React from "react";
 
-class Preloader extends Component {
-
-	constructor(props) {
-        super(props);
-        
-    }
-
-    render() {
-        return (
-            <div id="loader" className="loader"></div>
-        );
-    }
-    
-}
+const Preloader = () => {
+  return <div id="loader" className="loader"></div>;
+};
 
 export default Preloader;

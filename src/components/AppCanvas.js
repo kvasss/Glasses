@@ -15,6 +15,7 @@ import FaceMesh from "./Scene/FaceMesh";
 import GlassesMesh from "./Scene/GlassesMesh";
 import videoBackground from "./Scene/videoBackground";
 
+import KeyboardControls from "./Interface/ProductsCards/KeyboardControls";
 // import useStore from "./Store/appStore";
 
 let _timerResize = 0;
@@ -43,10 +44,8 @@ const FaceFollower = () => {
 
   return (
     <object3D scale={[0.6, 0.6, 0.6]} ref={objRef} name="FACEOBJ3D">
-      <object3D name="FACE3DPIVOTED">
-        <GlassesMesh />
-        <FaceMesh />
-      </object3D>
+      <GlassesMesh />
+      <FaceMesh />
     </object3D>
   );
 };
@@ -54,14 +53,18 @@ const FaceFollower = () => {
 class AppCanvas extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       sizing: this.compute_sizing(),
       devMode: false,
       demoMode: false
     };
 
+    this.meshes = {
+      LEFTEARTEMPLE: null,
+      RIGHTEARTEMPLE: null
+    };
     this.callbackReady = this.callbackReady.bind(this);
+    this.callbackTrack = this.callbackTrack.bind(this);
   }
 
   compute_sizing() {
@@ -100,9 +103,9 @@ class AppCanvas extends Component {
     if (errCode) {
       console.log("AN ERROR HAPPENS. ERR =", errCode);
 
-      this.setState({ demoMode: true });
-
-      console.log(this.state);
+      this.setState({
+        demoMode: true
+      });
 
       return;
     }
@@ -125,34 +128,36 @@ class AppCanvas extends Component {
 
     // JEELIZFACEFILTER.render_video();
 
-    // detectStates.forEach((detectState) => {
-    //   const newState = { ...this.state };
+    _threeFiber.scene.traverse((el) => {
+      if (el.name.indexOf("LEFT_PART") !== -1) {
+        this.meshes.LEFTEARTEMPLE = el;
+      } else if (el.name.indexOf("RIGHT_PART") !== -1) {
+        this.meshes.RIGHTEARTEMPLE = el;
+      }
+    });
 
-    //   let rx = detectState.rx,
-    //     ry = detectState.ry,
-    //     rz = detectState.rz;
-
-    //   if (
-    //     typeof this.meshes.LEFTEARTEMPLE != "undefined" &&
-    //     typeof this.meshes.RIGHTEARTEMPLE != "undefined"
-    //   ) {
-    //     this.meshes.LEFTEARTEMPLE.visible = false;
-    //     this.meshes.RIGHTEARTEMPLE.visible = false;
-    //     if (ry > -0.02) {
-    //       this.meshes.RIGHTEARTEMPLE.visible = true;
-    //     }
-    //     if (ry < 0.02) {
-    //       this.meshes.LEFTEARTEMPLE.visible = true;
-    //     }
-
-    //     if ((rx > 0.2 || rx < -0.2) && ry > -0.1 && ry < 0.1) {
-    //       this.meshes.LEFTEARTEMPLE.visible = false;
-    //       this.meshes.RIGHTEARTEMPLE.visible = false;
-    //     }
-    //   }
-
-    //   this.setState(newState);
-    // });
+    detectStates.forEach((detectState) => {
+      const newState = { ...this.state };
+      let rx = detectState.rx,
+        ry = detectState.ry,
+        rz = detectState.rz;
+      if (this.meshes.LEFTEARTEMPLE && this.meshes.RIGHTEARTEMPLE) {
+        console.log(this.meshes.LEFTEARTEMPLE);
+        this.meshes.LEFTEARTEMPLE.visible = false;
+        this.meshes.RIGHTEARTEMPLE.visible = false;
+        if (ry > -0.02) {
+          this.meshes.RIGHTEARTEMPLE.visible = true;
+        }
+        if (ry < 0.02) {
+          this.meshes.LEFTEARTEMPLE.visible = true;
+        }
+        if ((rx > 0.2 || rx < -0.2) && ry > -0.1 && ry < 0.1) {
+          this.meshes.LEFTEARTEMPLE.visible = false;
+          this.meshes.RIGHTEARTEMPLE.visible = false;
+        }
+      }
+      this.setState(newState);
+    });
   }
 
   // callbackDetect
@@ -168,7 +173,6 @@ class AppCanvas extends Component {
 
   // initFaceFilter
   initFaceFilter() {
-    console.log("initFaceFilter");
     JEELIZFACEFILTER.init({
       canvasId: "faceFilterCanvas",
       NNC: NN_DEFAULT,
@@ -202,7 +206,7 @@ class AppCanvas extends Component {
   render() {
     return (
       <>
-        <div className="canvas-wrapper">
+        <div id="canvas_wrapper" className="canvas-wrapper">
           <Canvas
             style={{
               zIndex: 2,
@@ -236,10 +240,13 @@ class AppCanvas extends Component {
               <ambientLight color={"#ffffff"} intensity={0.12} />
 
               {/* <Shadows /> */}
-              <PerspectiveCamera makeDefault position={[0.85, 0.5, 1.9]} />
+              {this.state.demoMode ? (
+                <PerspectiveCamera makeDefault position={[0.85, 0.5, 1.9]} />
+              ) : null}
 
               <DirtyHook sizing={this.state.sizing} />
 
+              <KeyboardControls />
               <FaceFollower {...this.state} />
             </Suspense>
             <OrbitControls />

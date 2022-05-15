@@ -6,15 +6,5 @@
     "offsetZ": 0,
     "templesY": 0,
     "scale": 0.6
-  },
-  "lensesSettings": {
-    "metalness": 0,
-    "roughness": 0,
-    "clearcoat": 1,
-    "clearcoatRoughness": 0,
-    "reflectivity": 0.5,
-    "transmission": 0,
-    "opacity": 1,
-    "color": "#ffffff"
   }
 }

@@ -2,8 +2,9 @@ import React from "react";
 import useStore from "./../Store/appStore";
 import scrollCatalogTo from "./ProductsCards/scrollCatalogTo";
 
-function NextBtn() {
+const NextBtn = () => {
   const { setNextProduct } = useStore();
+
   return (
     <button
       onClick={(e) => {
@@ -16,5 +17,5 @@ function NextBtn() {
       <i className="flaticons-next"></i>
     </button>
   );
-}
+};
 export default NextBtn;

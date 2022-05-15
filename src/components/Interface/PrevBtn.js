@@ -2,9 +2,8 @@ import React from "react";
 import useStore from "./../Store/appStore";
 import scrollCatalogTo from "./ProductsCards/scrollCatalogTo";
 
-function PrevBtn() {
+const PrevBtn = () => {
   const { setPrevProduct } = useStore();
-
   return (
     <button
       onClick={(e) => {
@@ -17,6 +16,6 @@ function PrevBtn() {
       <i className="flaticons-prev"></i>
     </button>
   );
-}
+};
 
 export default PrevBtn;
